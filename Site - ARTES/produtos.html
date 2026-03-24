@@ -11,23 +11,23 @@
 
     <style>
 
-        /* Definição da animação */
+       
 @keyframes pageEnter {
     from {
         opacity: 0;
-        transform: translateY(20px); /* Começa um pouco abaixo */
+        transform: translateY(20px); 
     }
     to {
         opacity: 1;
-        transform: translateY(0); /* Termina no lugar certo */
+        transform: translateY(0); 
     }
 }
-/* Aplique a animação apenas ao container do conteúdo */
+
 .main-card {
     animation: pageEnter 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Opcional: Efeito de "Saída" suave nos links (Opcional) */
+
 a {
     transition: opacity 0.3s ease;
 }
@@ -202,7 +202,7 @@ a {
         .btn-details:hover { background: var(--brand-soft); }
         .btn-order:hover { background: var(--dark-text); border-color: var(--dark-text); color: white; }
 
-        /* MODAL ESTILIZADO */
+     
         .modal-content {
             border-radius: 40px;
             border: none;
@@ -228,7 +228,7 @@ a {
         .copyright-text {
     color: var(--dark-text);
     font-size: 0.9rem;
-    opacity: 0.7; /* Deixa o texto levemente transparente/suave */
+    opacity: 0.7; 
     margin: 0;
 }
     </style>
