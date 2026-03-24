@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artes da Tati | Ateliê de Artesanato</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+
+        /* Definição da animação */
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Começa um pouco abaixo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Termina no lugar certo */
+    }
+}
+
+/* Aplicando ao corpo do site ou ao card principal */
+body {
+    animation: pageEnter 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Opcional: Efeito de "Saída" suave nos links (Opcional) */
+a {
+    transition: opacity 0.3s ease;
+}
+
+        :root {
+            --brand-pink: #e85d91;
+            --brand-gold: #d4a373; /* Cor complementar para luxo */
+            --brand-soft: #fff1f6;
+            --dark-text: #3d3d3d;
+            --bg-canvas: #fdf8f9;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        body {
+            background-color: var(--bg-canvas);
+            /* Textura sutil de papel */
+         
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-text);
+            overflow-x: hidden;
+        }
+
+        /* --- NAVEGAÇÃO FLUTUANTE --- */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 100px;
+            padding: 10px 20px;
+            border: 1px solid rgba(232, 93, 145, 0.1);
+            position: sticky;
+            top: 20px;
+            z-index: 1000;
+            margin: 0 auto 40px;
+            max-width: fit-content;
+        }
+
+        .nav-link-custom {
+            color: var(--dark-text);
+            text-decoration: none;
+            padding: 8px 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border-radius: 50px;
+        }
+
+        .nav-link-custom.active, .nav-link-custom:hover {
+            background: var(--brand-pink);
+            color: white !important;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-container {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            /* Forma orgânica assimétrica */
+            border-radius: 60% 40% 70% 30% / 40% 50% 60% 70%;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .hero-img:hover {
+            border-radius: 40% 60% 30% 70% / 50% 40% 70% 60%;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 5.5rem;
+            color: var(--brand-pink);
+            line-height: 0.8;
+            margin-left: -50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* --- CARDS E SEÇÕES --- */
+        .main-card {
+            background: white;
+            border-radius: 60px;
+            padding: 60px;
+            box-shadow: 0 40px 100px rgba(232, 93, 145, 0.08);
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--brand-pink);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, var(--brand-pink), transparent);
+        }
+
+        .btn-premium {
+            background: var(--brand-pink);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 2px;
+            display: inline-block;
+            transition: var(--transition);
+            box-shadow: 0 15px 30px rgba(232, 93, 145, 0.3);
+            border: none;
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: var(--dark-text);
+            color: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        /* --- NEWS FEED ESTILO "SCRAPBOOK" --- */
+        .news-item {
+            border: none;
+            background: var(--brand-soft);
+            padding: 20px;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .news-item:hover {
+            transform: rotate(-1deg) scale(1.02);
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .news-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        /* --- ELEMENTOS DECORATIVOS --- */
+        .floating-icon {
+            position: absolute;
+            color: var(--brand-pink);
+            opacity: 0.15;
+            animation: float 6s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        /* Responsividade */
+        @media (max-width: 991px) {
+            .hero-title { font-size: 3.5rem; margin-left: 0; margin-top: 20px; text-align: center; }
+            .hero-img { height: 350px; }
+            .main-card { padding: 30px; border-radius: 40px; }
+        }
+
+        /* --- RODAPÉ E REDES SOCIAIS --- */
+.site-footer {
+    text-align: center;
+    padding: 40px 20px 20px;
+    margin-top: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espaço entre os ícones */
+    margin-bottom: 20px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; /* Deixa redondinho */
+    background-color: var(--brand-soft); /* Fundo rosa bem clarinho */
+    color: var(--brand-pink); /* Ícone rosa forte */
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+/* Efeito quando passa o mouse ou clica */
+.social-icon:hover {
+    background-color: var(--brand-pink);
+    color: white;
+    transform: translateY(-5px); /* Dá um pulinho para cima */
+    box-shadow: 0 8px 15px rgba(232, 93, 145, 0.3); /* Sombra rosa */
+}
+
+.copyright-text {
+    color: var(--dark-text);
+    font-size: 0.9rem;
+    opacity: 0.7; /* Deixa o texto levemente transparente/suave */
+    margin: 0;
+}
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+
+        <nav class="glass-nav d-flex gap-2">
+            <a href="" class="nav-link-custom active">Início</a>
+            <a href="produtos.html" class="nav-link-custom">Coleções</a>
+            <a href="encomendas.html" class="nav-link-custom">Encomendas</a>
+        </nav>
+
+        <section class="hero-container mb-5">
+            <div class="row align-items-center">
+                <div class="col-lg-7 hero-image-wrapper">
+                    <img src="imagens/download.jpg" class="hero-img" alt="Arte manual">
+                </div>
+                <div class="col-lg-5">
+                    <h1 class="hero-title">Arte que<br><em>abraça</em></h1>
+                    <p class="lead mt-4 text-muted">Peças exclusivas feitas à mão para transformar sua casa em um lar cheio de afeto.</p>
+                    <div class="mt-4">
+                        <span class="d-block mb-2 fw-bold text-uppercase" style="font-size: 12px; letter-spacing: 3px; color: var(--brand-gold);">E-mail Direto</span>
+                        <h4 class="fw-bold" style="color: var(--brand-pink);">tsipinski@gmail.com</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+     <div class="main-card">
+            <div class="row g-5 align-items-center">
+                
+                <div class="col-lg-6 pe-lg-5">
+                    <h2 class="section-title">O Ateliê</h2>
+                    <p class="text-muted" style="line-height: 1.8;">
+                        Eu sou uma pessoa que transforma sentimentos em arte. Na pintura, gosto de trabalhar de forma orgânica, deixando que cada cor e cada textura contem um pouco da minha história. Para mim, não é só sobre deixar algo bonito, é sobre expressar o que sinto e criar algo que tenha significado.
+                    </p>
+                    <p class="text-muted" style="line-height: 1.8;">
+                        Como empreendedora de artes manuais, coloco muito de mim em cada peça que faço. Sou detalhista, criativa e sempre busco dar um toque único em tudo, valorizando o feito à mão e o carinho em cada processo. Gosto de reinventar, de testar ideias e de transformar o simples em algo especial. 
+                    </p>
+                    <p class="text-muted mb-0" style="line-height: 1.8;">
+                        Acredito no poder da arte como forma de conexão, de acolhimento e de identidade. Tudo que eu crio carrega um pouco de quem eu sou.
+                    </p>
+                </div>
+
+                <div class="col-lg-6 col-right-border d-flex flex-column align-items-center justify-content-center text-center border-start border-1" style="border-color: rgba(232, 93, 145, 0.2) !important;">
+                    
+                    <div class="px-lg-4 w-100">
+                       
+                        <h2 class="section-title justify-content-center" style="font-size: 2.2rem;">Exclusividade</h2>
+                        <p class="mb-4 text-muted">Nenhuma peça é igual a outra. <br> Explore nosso catálogo de mimos e utilitários.</p> <br>
+                        <a href="produtos.html" class="btn-premium mb-5">Ver Catálogo</a>
+
+                        <hr class="w-50 mx-auto mb-5" style="border-top: 1px solid var(--brand-pink); opacity: 0.2;">
+
+                        <h5 class="fw-bold text-uppercase mb-2" style="font-family: 'Inter', sans-serif; font-size: 0.9rem; letter-spacing: 2px; color: var(--brand-pink);">Acompanhe as Novidades</h5>
+                        <p class="small text-muted mb-4">Veja os bastidores, processos criativos e lançamentos diários do ateliê diretamente nas nossas redes.</p>
+                        <div class="social-links m-0">
+                            <a href="https://www.instagram.com/tatisipinski?igsh=bndkbHdodmo4OGJx" target="_blank" class="social-icon" title="Instagram">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/tatisipinski/" target="_blank" class="social-icon" title="Facebook">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="site-footer">
+            <p class="copyright-text">
+                &copy; 2026 Artes da Tati
+            </p>
+        </footer> 
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
