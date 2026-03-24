@@ -12,24 +12,24 @@
 
     <style>
 
-        /* Definição da animação */
+       
 @keyframes pageEnter {
     from {
         opacity: 0;
-        transform: translateY(20px); /* Começa um pouco abaixo */
+        transform: translateY(20px); 
     }
     to {
         opacity: 1;
-        transform: translateY(0); /* Termina no lugar certo */
+        transform: translateY(0); 
     }
 }
 
-/* Aplicando ao corpo do site ou ao card principal */
+
 body {
     animation: pageEnter 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Opcional: Efeito de "Saída" suave nos links (Opcional) */
+
 a {
     transition: opacity 0.3s ease;
 }
@@ -57,7 +57,7 @@ a {
             box-shadow: 0 30px 60px rgba(232, 93, 145, 0.1);
         }
 
-        /* Header e Títulos */
+       
         .header-nav {
             display: flex;
             justify-content: space-between;
@@ -91,7 +91,7 @@ a {
             margin-bottom: 40px;
         }
 
-        /* Como Funciona (Passo a Passo) */
+       
         .step-box {
             display: flex;
             gap: 20px;
@@ -127,7 +127,7 @@ a {
             line-height: 1.6;
         }
 
-        /* Formulário de Encomenda */
+        
         .order-form-card {
             background: var(--brand-soft);
             padding: 40px;
@@ -135,20 +135,20 @@ a {
             border: 1px solid #fcecf2;
         }
 
-       /* Estilos base para os campos de texto e seleção */
+     
         .form-control, .form-select {
             border-radius: 18px;
-            border: 2px solid #ffe1eb; /* Borda levemente rosada e mais grossinha */
+            border: 2px solid #ffe1eb; 
             padding: 14px 20px;
             font-size: 0.95rem;
             margin-bottom: 20px;
             color: #555;
             background-color: #fff;
             transition: var(--transition);
-            box-shadow: 0 4px 10px rgba(232, 93, 145, 0.03); /* Sombreado bem suave */
+            box-shadow: 0 4px 10px rgba(232, 93, 145, 0.03); 
         }
 
-        /* Deixa o select com a setinha rosa personalizada e cursor de 'clique' */
+      
         .form-select {
             cursor: pointer;
             font-weight: 500;
@@ -156,21 +156,21 @@ a {
             background-size: 14px 12px;
         }
 
-        /* Efeito ao passar o mouse por cima */
+  
         .form-control:hover, .form-select:hover {
             border-color: #fca8c6;
             background-color: #fffafc;
         }
 
-        /* Efeito ao clicar/selecionar o campo */
+      
         .form-control:focus, .form-select:focus {
             border-color: var(--brand-pink);
             background-color: #fff;
-            box-shadow: 0 0 0 4px rgba(232, 93, 145, 0.15); /* 'Aura' rosa ao focar */
+            box-shadow: 0 0 0 4px rgba(232, 93, 145, 0.15); 
             outline: none;
         }
 
-        /* Um leve ajuste nas opções (dentro do limite que o navegador permite) */
+       
         .form-select option {
             padding: 10px;
             color: var(--dark-text);
@@ -202,7 +202,7 @@ a {
             .order-form-card { padding: 25px; }
         }
 
-        /* Estilos do nosso menu personalizado */
+       
         .custom-dropdown {
             position: relative;
             margin-bottom: 20px;
@@ -217,7 +217,7 @@ a {
             background-color: #fff;
             cursor: pointer;
             transition: var(--transition);
-            /* Setinha fofa */
+          
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23e85d91' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 20px center;
@@ -230,7 +230,7 @@ a {
         }
 
         .dropdown-options {
-            display: none; /* Escondido por padrão */
+            display: none; 
             position: absolute;
             top: 100%;
             left: 0;
@@ -245,7 +245,7 @@ a {
         }
 
         .custom-dropdown.active .dropdown-options {
-            display: block; /* Mostra quando clica */
+            display: block; 
         }
 
         .dropdown-item {
@@ -256,7 +256,7 @@ a {
             transition: background-color 0.2s;
         }
 
-        /* ADEUS AZUL! AQUI ENTRA O ROSA QUANDO PASSA O MOUSE */
+       
         .dropdown-item:hover {
             background-color: #fcecf2; 
             color: var(--brand-pink);
@@ -285,7 +285,7 @@ a {
         .copyright-text {
     color: var(--dark-text);
     font-size: 0.9rem;
-    opacity: 0.7; /* Deixa o texto levemente transparente/suave */
+    opacity: 0.7; 
     margin: 0;
 }
     </style>
@@ -411,7 +411,7 @@ a {
             }
         });
 
-       // Lógica do Menu Personalizado
+       
         const dropdown = document.getElementById('customDropdown');
         const selected = dropdown.querySelector('.dropdown-selected');
         const options = dropdown.querySelectorAll('.dropdown-item');
